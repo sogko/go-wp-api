@@ -32,6 +32,14 @@ type MediaUploadOptions struct {
 	ContentType string
 	Data        []byte
 }
+type MediaDescription struct {
+	Raw      string `json:"raw,omitempty"`
+	Rendered string `json:"rendered,omitempty"`
+}
+type MediaCaption struct {
+	Raw      string `json:"raw,omitempty"`
+	Rendered string `json:"rendered,omitempty"`
+}
 type Media struct {
 	ID           int          `json:"id,omitempty"`
 	Date         string       `json:"date,omitempty"`
@@ -49,8 +57,8 @@ type Media struct {
 	MediaStatus  string       `json:"comment_status,omitempty"`
 	PingStatus   string       `json:"ping_status,omitempty"`
 	AltText      string       `json:"alt_text,omitempty"`
-	Caption      string       `json:"caption,omitempty"`
-	Description  string       `json:"description,omitempty"`
+	Caption      MediaCaption       `json:"caption,omitempty"`
+	Description  MediaDescription       `json:"description,omitempty"`
 	MediaType    string       `json:"media_type,omitempty"`
 	MediaDetails MediaDetails `json:"media_details,omitempty"`
 	Post         int          `json:"post,omitempty"`
